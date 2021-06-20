@@ -1,0 +1,664 @@
+{
+	"info": {
+		"_postman_id": "f74b080a-7b8e-4758-ae6a-1615a519a57e",
+		"name": "alliance_solutions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Data",
+			"item": [
+				{
+					"name": "Get Salary",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "/api/get/salary/employee/1",
+							"path": [
+								"api",
+								"get",
+								"salary",
+								"employee",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Exspenses",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"type\": \"data\",\n        \"attributes\": {\n            \"from\": \"2021-01-02\",\n            \"to\": \"2021-03-06\"\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "/api/get/expenses",
+							"path": [
+								"api",
+								"get",
+								"expenses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Income",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"type\": \"data\",\n        \"attributes\": {\n            \"from\": \"2021-01-02\",\n            \"to\": \"2021-03-06\"\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "/api/get/income",
+							"path": [
+								"api",
+								"get",
+								"income"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"type\": \"data\",\n        \"attributes\": {\n            \"from\": \"2021-01-02\",\n            \"to\": \"2021-03-06\"\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "/api/get/profit",
+							"path": [
+								"api",
+								"get",
+								"profit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employees",
+			"item": [
+				{
+					"name": "All Employees",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "/api/employees",
+							"path": [
+								"api",
+								"employees"
+							],
+							"query": [
+								{
+									"key": "Sort",
+									"value": "attribute",
+									"description": "Sort employees by attributes",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Current pagination page",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All Employees",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "/api/employees",
+									"path": [
+										"api",
+										"employees"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n         {\n            \"id\": \"1\",\n            \"type\": \"employees\",\n            \"attributes\": {\n                \"name\": \"Example name\",\n                \"email\": \"user@example.com\",\n                \"created_at\": \"2021-01-01\",\n                \"updated_at\": \"2021-01-01\"\n            },\n            \"relationships\": {\n                \"clients\": {\n                    \"links\": {\n                        \"self\": \"/employees/1/relationships/clients\",\n                        \"related\": \"/employees/1/clients\"\n                    },\n                    \"data\": [\n                        {\n                            \"id\": \"1\",\n                            \"type\": \"clients\"\n                        },\n                        {\n                            \"id\": \"2\",\n                            \"type\": \"clients\"\n                        }\n                    ]\n                },\n                \"orders\": {\n                    \"links\": {\n                        \"self\": \"/employees/1/relationships/orders\",\n                        \"related\": \"/employees/1/orders\"\n                    },\n                    \"data\": [\n                        {\n                            \"id\": \"1\",\n                            \"type\": \"orders\"\n                        },\n                        {\n                            \"id\": \"2\",\n                            \"type\": \"orders\"\n                        }\n                    ]\n                },\n                \"expenses\": {\n                    \"links\": {\n                        \"self\": \"/employees/1/relationships/expenses\",\n                        \"related\": \"/employees/1/expenses\"\n                    },\n                    \"data\": [\n                        {\n                            \"id\": \"1\",\n                            \"type\": \"expenses\"\n                        },\n                        {\n                            \"id\": \"2\",\n                            \"type\": \"expenses\"\n                        }\n                    ]\n                }\n            }\n        },\n        {\n            \"id\": \"2\",\n            \"type\": \"employees\",\n            \"attributes\": {\n                \"name\": \"Example name\",\n                \"email\": \"user@example.com\",\n                \"created_at\": \"2021-01-01\",\n                \"updated_at\": \"2021-01-01\"\n            },\n            \"relationships\": {\n                \"clients\": {\n                    \"links\": {\n                        \"self\": \"/employees/1/relationships/clients\",\n                        \"related\": \"/employees/1/clients\"\n                    },\n                    \"data\": [\n                        {\n                            \"id\": \"3\",\n                            \"type\": \"clients\"\n                        },\n                        {\n                            \"id\": \"4\",\n                            \"type\": \"clients\"\n                        }\n                    ]\n                },\n                \"orders\": {\n                    \"links\": {\n                        \"self\": \"/employees/1/relationships/orders\",\n                        \"related\": \"/employees/1/orders\"\n                    },\n                    \"data\": [\n                        {\n                            \"id\": \"3\",\n                            \"type\": \"orders\"\n                        },\n                        {\n                            \"id\": \"4\",\n                            \"type\": \"orders\"\n                        }\n                    ]\n                },\n                \"expenses\": {\n                    \"links\": {\n                        \"self\": \"/employees/1/relationships/expenses\",\n                        \"related\": \"/employees/1/expenses\"\n                    },\n                    \"data\": [\n                        {\n                            \"id\": \"3\",\n                            \"type\": \"expenses\"\n                        },\n                        {\n                            \"id\": \"4\",\n                            \"type\": \"expenses\"\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "All Employees Sorted",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "/api/employees?sort=name",
+									"path": [
+										"api",
+										"employees"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "name",
+											"description": "Sort employees by attributes"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": \"1\",\n            \"type\": \"employees\",\n            \"attributes\": {\n                \"name\": \"Example name\",\n                \"email\": \"user@example.com\",\n                \"created_at\": \"2021-01-01\",\n                \"updated_at\": \"2021-01-01\"\n            }\n        },\n        {\n            \"id\": \"2\",\n            \"type\": \"employees\",\n            \"attributes\": {\n                \"name\": \"Example name second\",\n                \"email\": \"user@example.com\",\n                \"created_at\": \"2021-01-01\",\n                \"updated_at\": \"2021-01-01\"\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "All Employees Sorted Descending",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "/api/employees?sort=-name",
+									"path": [
+										"api",
+										"employees"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "-name",
+											"description": "Sort employees by attributes"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": \"2\",\n            \"type\": \"employees\",\n            \"attributes\": {\n                \"name\": \"Example name second\",\n                \"email\": \"user@example.com\",\n                \"created_at\": \"2021-01-01\",\n                \"updated_at\": \"2021-01-01\"\n            }\n        },\n        {\n            \"id\": \"1\",\n            \"type\": \"employees\",\n            \"attributes\": {\n                \"name\": \"Example name\",\n                \"email\": \"user@example.com\",\n                \"created_at\": \"2021-01-01\",\n                \"updated_at\": \"2021-01-01\"\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "All Employees Sorted by Multiple Attributes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "/api/employees?sort=-name,email",
+									"path": [
+										"api",
+										"employees"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "-name,email",
+											"description": "Sort employees by attributes"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": \"2\",\n            \"type\": \"employees\",\n            \"attributes\": {\n                \"name\": \"Example name second\",\n                \"email\": \"user@example.com\",\n                \"created_at\": \"2021-01-01\",\n                \"updated_at\": \"2021-01-01\"\n            }\n        },\n        {\n            \"id\": \"1\",\n            \"type\": \"employees\",\n            \"attributes\": {\n                \"name\": \"Example name\",\n                \"email\": \"user@example.com\",\n                \"created_at\": \"2021-01-01\",\n                \"updated_at\": \"2021-01-01\"\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "All Employees Paginated",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "/api/employees?page=2",
+									"path": [
+										"api",
+										"employees"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2",
+											"description": "Current pagination page"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": \"3\",\n            \"type\": \"employees\",\n            \"attributes\": {\n                \"name\": \"Example name\",\n                \"email\": \"user@example.com\",\n                \"created_at\": \"2021-01-01\",\n                \"updated_at\": \"2021-01-01\"\n            }\n        },\n        {\n            \"id\": \"4\",\n            \"type\": \"employees\",\n            \"attributes\": {\n                \"name\": \"Example name second\",\n                \"email\": \"user@example.com\",\n                \"created_at\": \"2021-01-01\",\n                \"updated_at\": \"2021-01-01\"\n            }\n        }\n    ],\n    \"links\": {\n        \"first\": \"/employees?page=1\",\n        \"last\": \"/employees?page=5\",\n        \"prev\": \"/employees?page=1\",\n        \"next\": \"/employees?page=3\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Single Employee",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "/api/employees/1",
+							"path": [
+								"api",
+								"employees",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Single Employee",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "/api/employees/1",
+									"path": [
+										"api",
+										"employees",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"1\",\n        \"type\": \"employees\",\n        \"attributes\": {\n            \"name\": \"Example name\",\n            \"email\": \"user@example.com\",\n            \"created_at\": \"2021-01-01\",\n            \"updated_at\": \"2021-01-01\"\n        },\n        \"relationships\": {\n            \"clients\": {\n                \"links\": {\n                    \"self\": \"/employees/1/relationships/clients\",\n                    \"related\": \"/employees/1/clients\"\n                },\n                \"data\": [\n                    {\n                        \"id\": \"1\",\n                        \"type\": \"clients\"\n                    },\n                    {\n                        \"id\": \"2\",\n                        \"type\": \"clients\"\n                    }\n                ]\n            },\n            \"orders\": {\n                \"links\": {\n                    \"self\": \"/employees/1/relationships/orders\",\n                    \"related\": \"/employees/1/orders\"\n                },\n                \"data\": [\n                    {\n                        \"id\": \"1\",\n                        \"type\": \"orders\"\n                    },\n                    {\n                        \"id\": \"2\",\n                        \"type\": \"orders\"\n                    }\n                ]\n            },\n            \"expenses\": {\n                \"links\": {\n                    \"self\": \"/employees/1/relationships/expenses\",\n                    \"related\": \"/employees/1/expenses\"\n                },\n                \"data\": [\n                    {\n                        \"id\": \"1\",\n                        \"type\": \"expenses\"\n                    },\n                    {\n                        \"id\": \"2\",\n                        \"type\": \"expenses\"\n                    }\n                ]\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Employee",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"type\": \"employees\",\n        \"attributes\": {\n            \"name\": \"Example name\",\n            \"email\": \"usere@xample.com\"\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "/api/employees",
+							"path": [
+								"api",
+								"employees"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Employee",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"type\": \"emloyees\",\n        \"attributes\": {\n            \"name\": \"Example name\",\n            \"email\": \"user@example.com\"\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "/api/employees",
+									"path": [
+										"api",
+										"employees"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Location",
+									"value": "http://example.com/api/v1/employees/1",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"1\",\n        \"type\": \"employees\",\n        \"attributes\": {\n            \"name\": \"Example name\",\n            \"email\": \"user@example.com\",\n            \"created_at\": \"2021-01-01\",\n            \"updated_at\": \"2021-01-01\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Emloyee",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"id\": \"21\",\n        \"type\": \"employees\",\n        \"attributes\": {\n            \"name\": \"Example name changed\"\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "/api/employees/22",
+							"path": [
+								"api",
+								"employees",
+								"22"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Emloyee",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"type\": \"emloyees\",\n        \"attributes\": {\n            \"name\": \"Example name changed\"\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "/api/employees/1",
+									"path": [
+										"api",
+										"employees",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.api+json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"1\",\n        \"type\": \"employees\",\n        \"attributes\": {\n            \"name\": \"Example name changed\",\n            \"email\": \"user@example.com\",\n            \"created_at\": \"2021-01-01\",\n            \"updated_at\": \"2021-01-01\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "/api/employees/21",
+							"path": [
+								"api",
+								"employees",
+								"21"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Employee",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "/api/employees/1",
+									"path": [
+										"api",
+										"employees",
+										"1"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Clients",
+			"item": []
+		},
+		{
+			"name": "Orders",
+			"item": []
+		},
+		{
+			"name": "Expenses",
+			"item": []
+		}
+	]
+}
